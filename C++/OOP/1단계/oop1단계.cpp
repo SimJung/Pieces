@@ -1,0 +1,148 @@
+#include <iostream>
+
+using namespace std;
+
+typedef struct __Account
+{
+	int accNum;
+	int accMoney;
+	string accName;
+} Account;
+
+void ShowMenu(void);
+void MakeAccount(void);
+void DepositMoney(void);
+void WithdrawMoney(void);
+void PrintAllInfo(void);
+
+int account_Num = 0;
+Account accArr[100];
+enum {MAKE = 1, DEPOSIT, WITHDRAW,  PRINT, EXIT};
+
+int main(void)
+{
+	int choice_Num;
+	while(1)
+	{
+		ShowMenu();
+		cin>>choice_Num;
+		cout<<endl;
+		
+		switch(choice_Num)
+		{
+			case MAKE:
+				MakeAccount();
+				break;
+				
+			case DEPOSIT:
+				DepositMoney();
+				break;
+				
+			case WITHDRAW:
+				WithdrawMoney();
+				break;
+				
+			case PRINT:
+				PrintAllInfo();
+				break;
+				
+			case EXIT:
+				cout<<"프로그램을 종료합니다."<<endl; 
+				return 0;
+				
+			default:
+				cout<<"잘못된 값입니다."<<endl<<endl;
+				break; 
+		}
+	}
+	
+	return 0;
+}
+
+void ShowMenu(void)
+{
+	cout<<"-----Menu-----"<<endl;
+	cout<<"1. 계좌개설"<<endl;
+	cout<<"2. 입금"<<endl;
+	cout<<"3. 출금"<<endl;
+	cout<<"4. 계좌정보 전체 출력"<<endl;
+	cout<<"5. 프로그램 종료"<<endl;
+	cout<<"선택 : ";
+}
+
+void MakeAccount(void)
+{
+	int num, money;
+	string name;
+	
+	cout<<"[계좌개설]"<<endl;
+	cout<<"계좌ID : "; cin>>num;
+	cout<<"이름 : "; cin>>name;
+	cout<<"입금액 : "; cin>>money; 
+	
+	cout<<endl<<endl;
+	
+	accArr[account_Num].accNum = num;
+	accArr[account_Num].accName = name;
+	accArr[account_Num].accMoney = money;
+	
+	account_Num++;
+}
+
+void DepositMoney(void)
+{
+	int num, money;
+	cout<<"[입   금]"<<endl;
+	cout<<"계좌ID : "; cin>>num;
+	
+	for(int i=0; i<account_Num; i++)
+	{
+		if(accArr[i].accNum == num)
+		{
+			cout<<"입금액 : ";
+			cin>>money;
+			
+			accArr[i].accMoney += money;
+			cout<<"입금완료"<<endl<<endl;
+			return ;
+		}
+	}
+	
+	cout<<"올바르지 않은 ID입니다."<<endl<<endl; 
+}
+
+void WithdrawMoney(void)
+{
+	int num, money;
+	cout<<"[출   금]"<<endl;
+	cout<<"계좌ID : "; cin>>num;
+	
+	for(int i=0; i<account_Num; i++)
+	{
+		if(accArr[i].accNum == num)
+		{
+			cout<<"출금액 : ";
+			cin>>money;
+			
+			if(accArr[i].accMoney >= money)
+			{
+				accArr[i].accMoney -= money;
+				cout<<"출금완료"<<endl<<endl;
+				return ;
+			} 
+			cout<<"잔액이 부족합니다."<<endl<<endl;
+			return ; 
+		}
+	}
+	cout<<"올바르지 않은 ID입니다."<<endl<<endl; 
+}
+
+void PrintAllInfo(void)
+{
+	for(int i=0; i<account_Num; i++)
+	{
+		cout<<"계좌ID : "<<accArr[i].accNum<<endl;
+		cout<<"이름 : "<<accArr[i].accName<<endl;
+		cout<<"잔액 : "<<accArr[i].accMoney<<endl<<endl;
+	}
+}

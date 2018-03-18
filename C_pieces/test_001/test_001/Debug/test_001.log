@@ -1,0 +1,26 @@
+﻿빌드 시작: 2014-02-19 오후 10:46:14
+     1>2 노드의 "K:\작품\C언어_작품들\test_001\test_001\test_001.vcxproj" 프로젝트(build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\test_001.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         K:\Microsoft Visual C++ 2010 Express\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt test_001.c
+         test_001.c
+       ManifestResourceCompile:
+         모든 출력이 최신 상태입니다.
+       Link:
+         K:\Microsoft Visual C++ 2010 Express\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"K:\작품\C언어_작품들\test_001\Debug\test_001.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test_001.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"K:\작품\C언어_작품들\test_001\Debug\test_001.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"K:\작품\C언어_작품들\test_001\Debug\test_001.lib" /MACHINE:X86 Debug\test_001.exe.embed.manifest.res
+         Debug\test_001.obj
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\test_001.exe.embed.manifest" /manifest Debug\test_001.exe.intermediate.manifest
+         모든 출력이 최신 상태입니다.
+       LinkEmbedManifest:
+         모든 출력이 최신 상태입니다.
+         test_001.vcxproj -> K:\작품\C언어_작품들\test_001\Debug\test_001.exe
+       FinalizeBuildStatus:
+         "Debug\test_001.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Debug\test_001.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"K:\작품\C언어_작품들\test_001\test_001\test_001.vcxproj" 프로젝트를 빌드했습니다(build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:01.23

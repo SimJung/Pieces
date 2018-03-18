@@ -1,0 +1,11 @@
+파이썬 사전[dictionary]
+
+my_dictionary = {1:"고양이", 2:"개", 3:"아나콘다"}
+my_dictionary[2] = "개"
+
+my_dictionary = {"1":"고양이", "2":"개", "3":"아나콘다"}
+my_dictionary["2"] = "개"
+
+tuple = ()
+list = []
+dictionary = {}
